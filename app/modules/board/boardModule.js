@@ -10,7 +10,7 @@
 	 */
 
   	angular
-	  .module('board', [])
+	  .module('board', ['md.data.table'])
 	  .config(function ($mdIconProvider) {
             $mdIconProvider.iconSet('editor', '/app/assets/icons/editor-icons.svg'); 
         });

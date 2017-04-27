@@ -13,25 +13,38 @@
         <md-card-content>
             <md-tabs md-dynamic-height md-border-bottom>
                 <md-tab label="todos">
-                    <md-content class="md-padding">
-                        <md-subheader class="md-no-sticky">Tab One</md-subheader>
-                        <md-list>
-                            <md-list-item class="md-2-line">
-                                <md-checkbox ng-model="item.done"></md-checkbox>
-                                <div class="md-list-item-text">
-                                    <h3>teste</h3>
-                                </div>
-                                 <div class="md-list-item-text">
-                                    <h3>teste</h3>
-                                </div>
-                                 <div class="md-list-item-text">
-                                    <h3>teste</h3>
-                                </div>
-                                 <div class="md-list-item-text">
-                                    <h3>teste</h3>
-                                </div>
-                            </md-list-item>
-                        </md-list </md-content>
+                    <md-toolbar class="md-table-toolbar md-default">
+                        <div class="md-toolbar-tools">
+                            <span>Nutrition</span>
+                        </div>
+                    </md-toolbar>
+
+                    <!-- exact table from live demo -->
+                    <md-table-container>
+                        <table md-table md-row-select multiple ng-model="selected" md-progress="promise">
+                            <thead md-head md-order="query.order">
+                                <tr md-row>
+                                    <th md-column md-order-by="nameToLower"><span>Dessert (100g serving)</span></th>
+                                    <th md-column md-numeric md-order-by="calories.value"><span>Calories</span></th>
+                                    <th md-column md-numeric>Fat (g)</th>
+                                    <th md-column md-numeric>Carbs (g)</th>
+                                    <th md-column md-numeric>Protein (g)</th>
+                                </tr>
+                            </thead>
+                            <tbody md-body>
+                                <tr md-row md-select="dessert" md-select-id="name" md-auto-select >
+                                    <td md-cell>{{dessert.payed}}</td>
+                                    <td md-cell>{{dessert.payIn}}</td>
+                                    <td md-cell>{{dessert.description}}</td>
+                                    <td md-cell>{{dessert.category}}</td>
+                                    <td md-cell>{{dessert.value | number: 1}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </md-table-container>
+
+                    <md-table-pagination md-limit="query.limit" md-limit-options="[5, 10, 15]" md-page="query.page" md-total="{{desserts.count}}"
+                        md-on-paginate="getDesserts" md-page-select></md-table-pagination>
                 </md-tab>
                 <md-tab label="receitas">
                     <md-content class="md-padding">
@@ -74,6 +87,9 @@
                             neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas
                             lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
                     </md-content>
+                </md-tab>
+                <md-tab label="teste"></md-datepicker>">
+
                 </md-tab>
             </md-tabs>
         </md-card-content>
