@@ -1,0 +1,20 @@
+{
+  "generator-angm": {
+    "appName": "financial",
+    "angularCookies": true,
+    "angularAnimate": true,
+    "angularSanitize": true,
+    "angularMaterial": true,
+    "modules": [
+      {
+        "name": "board"
+      }
+    ],
+    "menu": [
+      {
+        "link": "board",
+        "title": "Board"
+      }
+    ]
+  }
+}
